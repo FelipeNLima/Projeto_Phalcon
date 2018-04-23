@@ -11,7 +11,7 @@ class ClienteController extends \Phalcon\Mvc\Controller
         $clienteInsert->atualizar();
 
 
-        foreach($clienteInsert->buscar("adlasksadjkhakdhsjadk") as $item)
+        foreach($clienteInsert->buscar("") as $item)
         {
             echo $item->nome;    
         }
