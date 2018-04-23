@@ -8,19 +8,10 @@ class ClienteController extends \Phalcon\Mvc\Controller
         $clienteInsert->id_cliente = 1;
         $r = $clienteInsert->get(1);
         
-        // if ($clienteInsert->remover() === false) {
-        //     echo "Umh, We can't store clienteInserts right now: \n";
-        
-        //     $messages = $clienteInsert->getMessages();
-        
-        //     foreach ($messages as $message) {
-        //         echo $message, "\n";
-        //     }
-        // } else {
-        //     echo 'Great, a new clienteInsert was saved successfully!';
-        // }
+        $clienteInsert->atualizar();
 
-        foreach($clienteInsert->buscar("asdasd") as $item)
+
+        foreach($clienteInsert->buscar("") as $item)
         {
             echo $item->nome;    
         }

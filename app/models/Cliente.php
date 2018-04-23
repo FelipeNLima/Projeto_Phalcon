@@ -9,7 +9,6 @@ class Cliente extends Model
     public $telefone;
     public $celular;
     public $email;
-    public $ativo = true;
 
     public function initialize()
     {
@@ -35,10 +34,10 @@ class Cliente extends Model
         return $this->save();
     }
 
-    public function atualizar()
+    public function atualizar($id)
     {
-        $cliente            = Cliente::findFirst($this->id_cliente);
-        $cliente->nome      = $this->nome;
+        $cliente            = Cliente::findFirstById($id);
+        $cliente->nome      = "Felipe";
         $cliente->cpf       = $this->cpf;
         $cliente->telefone  = $this->telefone;
         $cliente->celular   = $this->celular;
