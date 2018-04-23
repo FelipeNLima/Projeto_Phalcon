@@ -8,7 +8,7 @@ class ClienteController extends \Phalcon\Mvc\Controller
         $clienteInsert->id_cliente = 1;
         $r = $clienteInsert->get(1);
         
-        $clienteInsert->atualizar();
+        $clienteInsert->atualizar(1);
 
 
         foreach($clienteInsert->buscar("") as $item)
