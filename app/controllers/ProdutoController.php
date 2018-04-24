@@ -18,7 +18,7 @@ class ProdutoController extends \Phalcon\Mvc\Controller
 
     public function novoAction()
     {
-        return $this->view->pick('produto');
+        $this->view->pick('produto');
     }
 }
 ?>
