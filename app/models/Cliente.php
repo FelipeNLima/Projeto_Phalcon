@@ -9,6 +9,7 @@ class Cliente extends Model
     public $telefone;
     public $celular;
     public $email;
+    public $ativo;
 
     public function initialize()
     {
@@ -34,24 +35,30 @@ class Cliente extends Model
         return $this->save();
     }
 
-    public function atualizar($id)
+    public function atualizar()
     {
-        $cliente            = Cliente::findFirstById($id);
-        $cliente->nome      = "Felipe";
-        $cliente->cpf       = $this->cpf;
-        $cliente->telefone  = $this->telefone;
-        $cliente->celular   = $this->celular;
-        $cliente->email     = $this->email;
-        $cliente->ativo     = $this->ativo;
-
-        $cliente->update();
+        $cliente = Cliente::findFirst($this->id_cliente);
+      
+        if($this->nome)
+            $cliente->nome     = $this->nome;
+        if($this->cpf)
+            $cliente->cpf      = $this->cpf;
+        if($this->telefone)
+            $cliente->telefone = $this->telefone;
+        if($this->celular)
+            $cliente->celular  = $this->celular;
+        if($this->email)
+            $cliente->email    = $this->email;
+            
+        $cliente->ativo = $this->ativo ? 1 : 0;
+        $cliente->save();
     }
 
     public function buscar($nome)
     {
         return Cliente::find(  
                     [
-                        'conditions' => "nome LIKE '%$nome%'",
+                        'conditions' => "nome LIKE '%$nome%' AND ativo = 1",
                         'order'      => 'nome DESC',
                         'limit'      => 50
                     ] 
