@@ -1,0 +1,53 @@
+<?php $this->partial("topo");   ?>       
+    <div class="container body-content">
+        <form class="form-horizontal" action='../produto/' method='post'>
+            <fieldset>
+            
+            <!-- Form Name -->
+            <legend>Cadastro de Produtos</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="txtproduto">Produto</label>  
+                <div class="col-md-6">
+                    <input id="txtproduto" name="txtproduto" type="text" placeholder="Descrição do Produto" class="form-control input-md" required="">   
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+            <label class="col-md-4 control-label" for="txtestoque_minimo">Valor de Custo</label>  
+            <div class="input-group col-md-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text">R$</span>
+            </div>
+            <input id="txtvalorcusto" name="txtvalorcusto" type="numeric" placeholder="" class="form-control input-md" required="">
+                
+            </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+            <label class="col-md-4 control-label" for="txtestoque_atual">Valor de Venda</label>  
+
+            <div class="input-group col-md-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text">R$</span>
+            </div>
+            <input id="txtvalorvenda" name="txtvalorvenda" type="numeric" placeholder="" class="form-control input-md">
+                
+            </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+            <label class="col-md-4 control-label" for="btnsalvar"></label>
+            <div class="col-md-8">
+                <input id="btnsalvar" name="btnsalvar" type='submit' value='Salvar' class="btn btn-primary"/>
+                <button id="btncancelar" name="btncancelar" type="submit" class="btn btn-danger">Cancelar</button>
+            </div>
+            </div>
+            </fieldset>
+        </form>
+    </div>
+<?php $this->partial("rodape"); ?>
