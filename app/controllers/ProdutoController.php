@@ -7,4 +7,3 @@ class ProdutoController extends \Phalcon\Mvc\Controller
         $this->view->pick('produto/inserir');
     }
 }
-?>

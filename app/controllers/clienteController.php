@@ -24,15 +24,8 @@ class ClienteController extends \Phalcon\Mvc\Controller
 
     public function inserirDadosAction()
     {
-        $clienteInsert = new Cliente();
-
-        $clienteInsert->nome        = $this->request->getPost('nome');
-        $clienteInsert->cpf         = $this->request->getPost('cpf');
-        $clienteInsert->celular     = $this->request->getPost('celular');
-        $clienteInsert->telefone    = $this->request->getPost('telefone');
-        $clienteInsert->email       = $this->request->getPost('email');
-     
-        $clienteInsert->inserir();
+        $cliente = $this->postParaObjeto();
+        $cliente->inserir();
     }
 
     public function editarAction()
@@ -42,7 +35,8 @@ class ClienteController extends \Phalcon\Mvc\Controller
 
     public function editarDadosAction()
     {
-
+        $cliente = $this->postParaObjeto();
+        $cliente->atualizar();
     }
 
     public function removerAction()
@@ -54,5 +48,17 @@ class ClienteController extends \Phalcon\Mvc\Controller
     {
 
     }
+
+    private function postParaObjeto()
+    {
+        $obj = new Cliente();
+
+        $obj->nome        = $this->request->getPost('nome');
+        $obj->cpf         = $this->request->getPost('cpf');
+        $obj->celular     = $this->request->getPost('celular');
+        $obj->telefone    = $this->request->getPost('telefone');
+        $obj->email       = $this->request->getPost('email');
+
+        return $obj;
+    }
 }
-?>
