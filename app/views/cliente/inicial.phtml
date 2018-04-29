@@ -1,3 +1,56 @@
 <?php $this->partial("topo"); ?>
-    <h1>Inicial</h1>
+    
+    <div style="margin-top: 50px !important;">
+        <form action="" method="POST">
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="text" class="form-control preenche" name="pesquisa" id="pesquisa" placeholder="Pesquisar" value="<?php echo $pesquisa; ?>"/>
+                </div>
+                <div class="offset-md-2 col-md-2">
+                    <a href="http://localhost/Projeto_Phalcon/Cliente/inserir" class = "btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Novo Cliente
+                    </a>
+                </div>
+            </div>
+
+            <div class="row espaco">
+                <div class="col-md-12" style="margin-top: 30px">
+                    <div class="form-group">
+                    <table class="table table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">CPF</th>
+                                <th scope="col" width="120px">Celular</th>
+                                <th scope="col" width="120px">Telefone</th>
+                                <th class="text-center" scope="col" width="160px">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($resultado as $item){ ?>
+                                <tr>
+                                    <td><?php echo $item->nome;?></td> 
+                                    <td><?php echo $item->cpf;?></td>
+                                    <td><?php echo $item->celular;?></td>
+                                    <td><?php echo $item->telefone;?></td>
+                                    <td class="text-center">
+                                        <a href="http://localhost/Projeto_Phalcon/Cliente/editar/<?php echo $item->id_cliente;?>">
+                                            <i class="fas fa-edit icone" style="margin-right: 30px"></i>
+                                        </a>
+                                        <a href="http://localhost/Projeto_Phalcon/Cliente/desativar/<?php echo $item->id_cliente;?>">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
 <?php $this->partial("rodape"); ?>

@@ -25,7 +25,7 @@ class Cliente extends Model
     {
         $condicao = "id_cliente = :id_cliente:";
         $where    = array('id_cliente' => $this->id_cliente);
-        $cliente  = Cliente::findFirst(array($condicao, "bind" => $where));
+        $cliente  = Cliente::findFirst(array($condicao, "bind" => $where, 'order'=>'id_cliente'));
 
         return $cliente;
     }
@@ -60,7 +60,8 @@ class Cliente extends Model
                     [
                         'conditions' => "nome LIKE '%$nome%' AND ativo = 1",
                         'order'      => 'nome DESC',
-                        'limit'      => 50
+                        'order'      => 'id_cliente',
+                        'limit'      =>  50
                     ] 
                 );
     }

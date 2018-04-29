@@ -1,3 +1,43 @@
 <?php $this->partial("topo"); ?>
-    <h1>Remover</h1>
+
+
+    <div class="container">
+        <div class="offset-3 col-md-6">
+            <div class="row">
+                <div class="col-md-12" style="margin-top: 30px;">
+                    <h3>Remover Cliente</h3>
+                    <h6>Tem certeza que deseja remover?</h6>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12" style="margin-top: 30px;">
+                    <table class="table  table-hover">
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">CPF</th>
+                        </tr>
+                        <tr>
+                            <td><?php echo $dados->nome;?></td>
+                            <td><?php echo $dados->cpf;?></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <form action="<?php echo 'http://localhost/Projeto_Phalcon/Cliente/desativarDados/', $dados->id_cliente; ?>" method="POST">
+
+                <div class="row">
+                    <div class="offset-2 col-md-4 espaco">
+                        <input type="submit" value="Confimar" class="btn btn-primary preeche" />
+                    </div>
+                    <div class="col-md-4 espaco">
+                        <a href="http://localhost/Projeto_Phalcon/Cliente/" class="btn btn-danger preeche">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 <?php $this->partial("rodape"); ?>
