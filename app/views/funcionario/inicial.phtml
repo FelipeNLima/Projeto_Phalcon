@@ -8,9 +8,9 @@
                     <input type="text" class="form-control preenche" name="pesquisa" id="pesquisa" placeholder="Pesquisar" value="<?php echo $pesquisa; ?>"/>
                 </div>
                 <div class="offset-md-4 col-md-2">
-                    <a href="http://localhost/Projeto_Phalcon/Cliente/inserir" class = "btn btn-primary preeche">
-                        <i class="fas fa-plus" style="    margin-right: 5px;"></i>
-                        Cliente
+                    <a href="http://localhost/Projeto_Phalcon/Funcionario/inserir" class = "btn btn-primary preeche">
+                        <i class="fas fa-plus" style="margin-right: 5px;"></i>
+                        Funcionário
                     </a>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">Nome</th>
-                                <th scope="col">CPF</th>
+                                <th scope="col">Cargo</th>
                                 <th scope="col" width="120px">Celular</th>
                                 <th scope="col" width="120px">Telefone</th>
                                 <th class="text-center" scope="col" width="160px">Opções</th>
@@ -32,14 +32,14 @@
                             <?php foreach($resultado as $item){ ?>
                                 <tr>
                                     <td><?php echo $item->nome;?></td> 
-                                    <td><?php echo $item->cpf;?></td>
+                                    <td><?php echo $item->cargo;?></td>
                                     <td><?php echo $item->celular;?></td>
                                     <td><?php echo $item->telefone;?></td>
                                     <td class="text-center">
-                                        <a href="http://localhost/Projeto_Phalcon/Cliente/editar/<?php echo $item->id_cliente;?>">
+                                        <a href="http://localhost/Projeto_Phalcon/Funcionario/editar/<?php echo $item->id_funcionario;?>">
                                             <i class="fas fa-edit icone" style="margin-right: 30px"></i>
                                         </a>
-                                        <a href="http://localhost/Projeto_Phalcon/Cliente/desativar/<?php echo $item->id_cliente;?>">
+                                        <a href="http://localhost/Projeto_Phalcon/Funcionario/desativar/<?php echo $item->id_funcionario;?>">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>

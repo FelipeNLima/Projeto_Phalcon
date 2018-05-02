@@ -1,53 +1,40 @@
-<?php $this->partial("topo");   ?>       
-    <div class="container body-content">
-        <form class="form-horizontal" action='../produto/' method='post'>
-            <fieldset>
-            
-            <!-- Form Name -->
-            <legend>Cadastro de Produtos</legend>
+<?php $this->partial("topo"); ?>
 
-            <!-- Text input-->
+<div class="offset-md-1 col-md-10" style="margin-top: 30px !important">
+    <h3>Novo Produto</h3>
+    <hr />
+</div>
+
+<form action="http://localhost/Projeto_Phalcon/Produto/inserirDados" method="POST">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
             <div class="form-group">
-                <label class="col-md-4 control-label" for="txtproduto">Produto</label>  
-                <div class="col-md-6">
-                    <input id="txtproduto" name="txtproduto" type="text" placeholder="Descrição do Produto" class="form-control input-md" required="">   
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <label>Descrição:</label>
+                        <input type="text" class="form-control" required name="descricao" id="descricao"/>
+                    </div>
+                
+                    <div class="col-md-6">
+                        <label>Valor Custo:</label>
+                        <input type="text" class="form-control" required name="valor_custo" id="valor_custo"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Valor Venda:</label>
+                        <input type="text" class="form-control" required name="valor_venda" id="valor_venda"/>
+                    </div>
+
+                    <div class="offset-sm-8 col-md-2 espaco">
+                        <input type="submit" value="Gravar" class="btn btn-primary preeche" />
+                    </div>
+                    <div class="col-md-2 espaco">
+                        <a href="http://localhost/Projeto_Phalcon/Produto/" class="btn btn-danger preeche">Cancelar</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-            <label class="col-md-4 control-label" for="txtestoque_minimo">Valor de Custo</label>  
-            <div class="input-group col-md-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text">R$</span>
-            </div>
-            <input id="txtvalorcusto" name="txtvalorcusto" type="numeric" placeholder="" class="form-control input-md" required="">
-                
-            </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-            <label class="col-md-4 control-label" for="txtestoque_atual">Valor de Venda</label>  
-
-            <div class="input-group col-md-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text">R$</span>
-            </div>
-            <input id="txtvalorvenda" name="txtvalorvenda" type="numeric" placeholder="" class="form-control input-md">
-                
-            </div>
-            </div>
-
-            <!-- Button (Double) -->
-            <div class="form-group">
-            <label class="col-md-4 control-label" for="btnsalvar"></label>
-            <div class="col-md-8">
-                <input id="btnsalvar" name="btnsalvar" type='submit' value='Salvar' class="btn btn-primary"/>
-                <button id="btncancelar" name="btncancelar" type="submit" class="btn btn-danger">Cancelar</button>
-            </div>
-            </div>
-            </fieldset>
-        </form>
+        </div>
     </div>
+</form>
+
 <?php $this->partial("rodape"); ?>

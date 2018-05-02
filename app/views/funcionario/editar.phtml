@@ -1,0 +1,57 @@
+<?php $this->partial("topo");   ?>
+    <div class="offset-md-1 col-md-10 espaco" style="margin-top: 30px !important">
+        <h3>Editar Funcionário</h3>
+        <hr />
+    </div>
+
+    <form action="<?php echo 'http://localhost/Projeto_Phalcon/Funcionario/editarDados/', $dados->id_funcionario; ?>" method="POST">
+        <div class="row espaco">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <label>Nome:</label>
+                            <input type="text" class="form-control" required name="nome" id="nome" value="<?php echo $dados->nome;?>"/>
+                        </div>
+
+                        <div class="col-md-8">
+                            <label>Cargo:</label>
+                            <input type="text" class="form-control" required name="cargo" id="cargo" value="<?php echo $dados->cargo;?>"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Salário:</label>
+                            <input type="text" class="form-control" required name="salario" id="salario" value="<?php echo $dados->salario;?>"/>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label>CPF:</label>
+                            <input type="text" class="form-control" required name="cpf" id="cpf" value="<?php echo $dados->cpf;?>"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Telefone:</label>
+                            <input type="text" class="form-control" required name="telefone" id="telefone" value="<?php echo $dados->telefone;?>"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Celular:</label>
+                            <input type="text" class="form-control" required name="celular" id="celular" value="<?php echo $dados->celular;?>"/>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label>E-mail:</label>
+                            <input type="email" class="form-control" required name="email" id="email" value="<?php echo $dados->email;?>" />
+                        </div>
+
+                        <div class="offset-sm-8 col-md-2 espaco">
+                            <input type="submit" value="Gravar" class="btn btn-primary preeche" />
+                        </div>
+                        <div class="col-md-2 espaco">
+                            <a href="http://localhost/Projeto_Phalcon/Funcionario/" class="btn btn-danger preeche">Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+<?php $this->partial("rodape"); ?>

@@ -1,0 +1,39 @@
+<?php $this->partial("topo");   ?>
+    <div class="offset-md-1 col-md-10 espaco" style="margin-top: 30px !important">
+        <h3>Editar Produto</h3>
+        <hr />
+    </div>
+
+    <form action="<?php echo 'http://localhost/Projeto_Phalcon/Produto/editarDados/', $dados->id_produto; ?>" method="POST">
+        <div class="row espaco">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <label>Descrição:</label>
+                            <input type="text" class="form-control" required name="descricao" id="descricao" value="<?php echo $dados->descricao;?>"/>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Valor Custo:</label>
+                            <input type="text" class="form-control" required name="valor_custo" id="valor_custo" value="<?php echo $dados->valor_custo;?>"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Valor Venda:</label>
+                            <input type="text" class="form-control" required name="valor_venda" id="valor_venda" value="<?php echo $dados->valor_venda;?>"/>
+                        </div>
+
+                        <div class="offset-sm-8 col-md-2 espaco">
+                            <input type="submit" value="Gravar" class="btn btn-primary preeche" />
+                        </div>
+                        <div class="col-md-2 espaco">
+                            <a href="http://localhost/Projeto_Phalcon/Produto/" class="btn btn-danger preeche">Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+<?php $this->partial("rodape"); ?>

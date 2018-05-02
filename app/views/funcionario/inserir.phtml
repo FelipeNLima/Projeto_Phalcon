@@ -1,0 +1,58 @@
+<?php $this->partial("topo"); ?>
+
+<div class="offset-md-1 col-md-10" style="margin-top: 30px !important">
+    <h3>Novo Funcionário</h3>
+    <hr />
+</div>
+
+<form action="http://localhost/Projeto_Phalcon/Funcionario/inserirDados" method="POST">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="form-group">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <label>Nome:</label>
+                        <input type="text" class="form-control" required name="nome" id="nome"/>
+                    </div>
+                    
+                    <div class="col-md-8">
+                        <label>Cargo:</label>
+                        <input type="text" class="form-control" required name="cargo" id="cargo"/>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Salário:</label>
+                        <input type="text" class="form-control" required name="salario" id="salario"/>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>CPF:</label>
+                        <input type="text" class="form-control" required name="cpf" id="cpf"/>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Telefone:</label>
+                        <input type="text" class="form-control" required name="telefone" id="telefone"/>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Celular:</label>
+                        <input type="text" class="form-control" required name="celular" id="celular"/>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label>E-mail:</label>
+                        <input type="email" class="form-control" required name="email" id="email"/>
+                    </div>
+
+                    <div class="offset-sm-8 col-md-2 espaco">
+                        <input type="submit" value="Gravar" class="btn btn-primary preeche" />
+                    </div>
+                    <div class="col-md-2 espaco">
+                        <a href="http://localhost/Projeto_Phalcon/Funcionario/" class="btn btn-danger preeche">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<?php $this->partial("rodape"); ?>

@@ -1,34 +1,34 @@
 <?php
 
-class ClienteController extends \Phalcon\Mvc\Controller
+class FuncionarioController extends \Phalcon\Mvc\Controller
 {
     #region INDEX
     public function indexAction()
     {
-        $cliente = new Cliente();
+        $funcionario = new Funcionario();
         $pesquisa = '';
 
         if($this->request->isPost())
             $pesquisa = $this->request->getPost('pesquisa');
         
-        $resultado = $cliente->buscar($pesquisa);
+        $resultado = $funcionario->buscar($pesquisa);
 
         $this->view->setVar('resultado', $resultado);
         $this->view->setVar('pesquisa', $pesquisa);
-        $this->view->pick('cliente/inicial');
+        $this->view->pick('funcionario/inicial');
     }
     #endregion
 
     #region INSERIR
     public function inserirAction()
     {
-        $this->view->pick('cliente/inserir');
+        $this->view->pick('funcionario/inserir');
     }
 
     public function inserirDadosAction()
     {
-        $cliente = $this->postParaObjeto();
-        $cliente->inserir();      
+        $funcionario = $this->postParaObjeto();
+        $funcionario->inserir();      
 
         $this->irPraIndex();
     }
@@ -37,18 +37,18 @@ class ClienteController extends \Phalcon\Mvc\Controller
     #region EDITAR
     public function editarAction($id)
     {
-        $cliente = new Cliente();
-        $cliente->id_cliente = $id;
-        $dados = $cliente->get();
+        $funcionario = new Funcionario();
+        $funcionario->id_funcionario = $id;
+        $dados = $funcionario->get();
 
         $this->view->setVar('dados', $dados);
-        $this->view->pick('cliente/editar');
+        $this->view->pick('funcionario/editar');
     }
 
     public function editarDadosAction($id)
     {
-        $cliente = $this->postParaObjeto($id);
-        $cliente->atualizar();
+        $funcionario = $this->postParaObjeto($id);
+        $funcionario->atualizar();
 
         $this->irPraIndex();
     }
@@ -57,21 +57,21 @@ class ClienteController extends \Phalcon\Mvc\Controller
     #region DESATIVAR
     public function desativarAction($id)
     {
-        $cliente = new Cliente();
-        $cliente->id_cliente = $id;
-        $dados = $cliente->get();
+        $funcionario = new Funcionario();
+        $funcionario->id_funcionario = $id;
+        $dados = $funcionario->get();
         
         print_r($dados);
 
         $this->view->setVar('dados', $dados);
-        $this->view->pick('cliente/remover');
+        $this->view->pick('funcionario/remover');
     }
 
     public function desativarDadosAction($id)
     {
-        $cliente = new Cliente();
-        $cliente->id_cliente = $id;
-        $dados = $cliente->get();
+        $funcionario = new Funcionario();
+        $funcionario->id_funcionario = $id;
+        $dados = $funcionario->get();
         $dados->ativo = false;
         $dados->atualizar();
         $this->irPraIndex();
@@ -79,7 +79,7 @@ class ClienteController extends \Phalcon\Mvc\Controller
 
     private function irPraIndex()
     {
-        header("location:http://localhost/Projeto_Phalcon/Cliente/");
+        header("location:http://localhost/Projeto_Phalcon/Funcionario/");
     }
 
     #endregion
@@ -87,10 +87,10 @@ class ClienteController extends \Phalcon\Mvc\Controller
     #region AUX
     private function postParaObjeto($id = 0)
     {
-        $obj = new Cliente();
+        $obj = new Funcionario();
 
         if($id > 0) {
-            $obj->id_cliente = $id;
+            $obj->id_funcionario = $id;
         }
 
         $obj->nome        = $this->request->getPost('nome');
@@ -98,6 +98,8 @@ class ClienteController extends \Phalcon\Mvc\Controller
         $obj->celular     = $this->request->getPost('celular');
         $obj->telefone    = $this->request->getPost('telefone');
         $obj->email       = $this->request->getPost('email');
+        $obj->cargo       = $this->request->getPost('cargo');
+        $obj->salario     = $this->request->getPost('salario');
         $obj->ativo       = true;
 
         return $obj;

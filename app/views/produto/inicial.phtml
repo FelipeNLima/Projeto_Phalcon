@@ -8,9 +8,9 @@
                     <input type="text" class="form-control preenche" name="pesquisa" id="pesquisa" placeholder="Pesquisar" value="<?php echo $pesquisa; ?>"/>
                 </div>
                 <div class="offset-md-4 col-md-2">
-                    <a href="http://localhost/Projeto_Phalcon/Cliente/inserir" class = "btn btn-primary preeche">
+                    <a href="http://localhost/Projeto_Phalcon/Produto/inserir" class = "btn btn-primary preeche">
                         <i class="fas fa-plus" style="    margin-right: 5px;"></i>
-                        Cliente
+                        Produto
                     </a>
                 </div>
             </div>
@@ -21,25 +21,23 @@
                     <table class="table table-hover">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">CPF</th>
-                                <th scope="col" width="120px">Celular</th>
-                                <th scope="col" width="120px">Telefone</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col" width="120px">Valor Custo</th>
+                                <th scope="col" width="120px">Valor Venda</th>
                                 <th class="text-center" scope="col" width="160px">Opções</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($resultado as $item){ ?>
                                 <tr>
-                                    <td><?php echo $item->nome;?></td> 
-                                    <td><?php echo $item->cpf;?></td>
-                                    <td><?php echo $item->celular;?></td>
-                                    <td><?php echo $item->telefone;?></td>
+                                    <td><?php echo $item->descricao;?></td> 
+                                    <td><?php echo $item->valor_custo;?></td>
+                                    <td><?php echo $item->valor_venda;?></td>
                                     <td class="text-center">
-                                        <a href="http://localhost/Projeto_Phalcon/Cliente/editar/<?php echo $item->id_cliente;?>">
+                                        <a href="http://localhost/Projeto_Phalcon/Produto/editar/<?php echo $item->id_produto;?>">
                                             <i class="fas fa-edit icone" style="margin-right: 30px"></i>
                                         </a>
-                                        <a href="http://localhost/Projeto_Phalcon/Cliente/desativar/<?php echo $item->id_cliente;?>">
+                                        <a href="http://localhost/Projeto_Phalcon/Produto/desativar/<?php echo $item->id_produto;?>">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
